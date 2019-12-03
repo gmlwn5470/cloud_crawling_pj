@@ -3,11 +3,20 @@ import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from time import localtime, strftime
+import time
 
 path = "chromedriver"
 driver = webdriver.Chrome(path)
 driver.get('https://www.youtube.com/gaming/live')
 
+#start
+time.sleep(5)
+endk = 5
+while endk:
+    driver.find_element_by_tag_name('body').send_keys(Keys.END)
+    time.sleep(0.3)
+    endk -= 1
+#end
 
 page = driver.page_source
 soup = BeautifulSoup(page,'html.parser')
@@ -30,4 +39,4 @@ for i in range(0,len(all_chennel)):
     roww.append(extract_date)
     youtube_video_list.append(roww)
     
-youtube_video_list
+youtube_video_lista
