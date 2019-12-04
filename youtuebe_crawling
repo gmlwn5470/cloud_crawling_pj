@@ -8,45 +8,53 @@ import csv
 
 path = "chromedriver"
 driver = webdriver.Chrome(path)
-driver.get('https://www.youtube.com/gaming/live')
+weblist = ['https://www.youtube.com/gaming/live',
+           'https://www.youtube.com/channel/UCYfdidRxbB8Qhf0Nx7ioOYw']
+total_list = []
+k =1
+for i in range(0,len(weblist)):
+    driver.get(weblist[i])
 
 #start
-time.sleep(5)
-endk = 5
-while endk:
-    driver.find_element_by_tag_name('body').send_keys(Keys.END)
-    time.sleep(0.3)
-    endk -= 1
+	time.sleep(5)
+	endk = 5
+	while endk:
+	    driver.find_element_by_tag_name('body').send_keys(Keys.END)
+	    time.sleep(0.3)
+	    endk -= 1
 #end
 
-page = driver.page_source
-soup = BeautifulSoup(page,'html.parser')
+	page = driver.page_source
+	soup = BeautifulSoup(page,'html.parser')
 
-all_chennel = soup.find_all('a','yt-simple-endpoint style-scope yt-formatted-string')
-chennel = [soup.find_all('a','yt-simple-endpoint style-scope yt-formatted-string')[n].string for n in range(0,len(all_chennel))]
+	all_chennel = soup.find_all('a','yt-simple-endpoint style-scope yt-formatted-string')
+	chennel = [soup.find_all('a','yt-simple-endpoint style-scope yt-formatted-string')[n].string for n in range(0,len(all_chennel))]
 
-all_view_num = soup.find_all('span','style-scope ytd-grid-video-renderer')
-view_num = [soup.find_all('span','style-scope ytd-grid-video-renderer')[n].string for n in range(0,len(all_view_num))]
+	all_view_num = soup.find_all('span','style-scope ytd-grid-video-renderer')
+	view_num = [soup.find_all('span','style-scope ytd-grid-video-renderer')[n].string for n in range(0,len(all_view_num))]
 
-extract_date = strftime("%Y/%m/%d %H:%M:%S", localtime())
+	extract_date = strftime("%Y/%m/%d %H:%M:%S", localtime())
 
 
-youtube_video_list = []
+	youtube_video_list = []
 
-for i in range(0,len(all_chennel)):
-    roww = []
-    roww.append(chennel[i])
-    roww.append(view_num[i])
-    roww.append(extract_date)
-    youtube_video_list.append(roww)
+	for i in range(0,len(all_chennel)):
+	    roww = []
+	    roww.append(chennel[i])
+	    roww.append(view_num[i])
+	    roww.append(extract_date)
+	    youtube_video_list.append(roww)
     
 #youtube_video_lista
+	#total_list += youtube_video_list
+#total_list
 
-csvfile = open("Desktop/test.csv","w",-1,"utf-8")
-csvwriter = csv.writer(csvfile)
-for row in youtube_video_list:
-    csvwriter.writerow(row)
-csvfile.close()
+	csvfile = open("Desktop/test%d.csv" % k ,"w",-1,"utf-8")
+	k += 1;
+	csvwriter = csv.writer(csvfile)
+	for row in youtube_video_list:
+	    csvwriter.writerow(row)
+	csvfile.close()
 
 
 
