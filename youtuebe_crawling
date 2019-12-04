@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from time import localtime, strftime
 import time
+import csv
 
 path = "chromedriver"
 driver = webdriver.Chrome(path)
@@ -39,4 +40,10 @@ for i in range(0,len(all_chennel)):
     roww.append(extract_date)
     youtube_video_list.append(roww)
     
-youtube_video_lista
+#youtube_video_lista
+
+csvfile = open("Desktop/test.csv","w",-1,"utf-8")
+csvwriter = csv.writer(csvfile)
+for row in youtube_video_list:
+    csvwriter.writerow(row)
+csvfile.close()
