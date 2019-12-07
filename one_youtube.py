@@ -18,4 +18,8 @@ soup = BeautifulSoup(page,'html.parser')
 
 all_view_num = soup.find_all('span','view-count style-scope yt-view-count-renderer')
 view_num = [soup.find_all('span','view-count style-scope yt-view-count-renderer')[n].string for n in range(0,len(all_view_num))]
-view_num
+view_numm
+
+
+
+
