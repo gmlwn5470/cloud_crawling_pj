@@ -1,10 +1,10 @@
-#from django.urls import path
-from django.conf.urls import url
+from django.urls import path
+#from django.conf.urls import url
 from . import views
-#from django.views.generic import TemplateView
+from django.views.generic import TemplateView
 
 urlpatterns = [
-        url(r'^$', views.index,name='index'),
+        path('', views.index, name='index'),
 
 #    path('', views.post_list, name='post_list'),
 #    path('delivery_food.html', TemplateView.as_view(template_name="crawlingsite/delivery_food.html"), name='delivery_food'),
