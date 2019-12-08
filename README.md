@@ -16,4 +16,4 @@ TARGET ->> 배달음식 광고주
 => 결과를 통해서 광고주는 해당시간에대 인기있는 스트리머를 알수있다.
    스트리머와 계약을 통해서 광고를 추진할 수 있다.
    
-3. youtube 실시간크롤링 -> 
+3. youtube 실시간크롤러 -> https://github.com/gmlwn5470/cloud_crawling_pj/blob/master/list_youtube.py
