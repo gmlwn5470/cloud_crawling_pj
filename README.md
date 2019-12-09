@@ -20,3 +20,5 @@
 
 4. Plan 발표 자료 -> https://github.com/gmlwn5470/cloud_crawling_pj/blob/master/midpresentation.pptx
 5. final 발표 자료 ->https://github.com/gmlwn5470/cloud_crawling_pj/blob/master/FINAL_PPT.pptx
+6. 웹페이지 (윈도우로열기) -> https://github.com/gmlwn5470/cloud_crawling_pj/blob/master/startbootstrap-resume-gh-pages.zip
+   - 다운받아서 압축풀어서 열기
