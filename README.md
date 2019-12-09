@@ -19,3 +19,4 @@
 3. youtube 실시간크롤러코드 -> https://github.com/gmlwn5470/cloud_crawling_pj/blob/master/list_youtube.py
 
 4. Plan 발표 자료 -> https://github.com/gmlwn5470/cloud_crawling_pj/blob/master/midpresentation.pptx
+5. final 발표 자료 ->https://github.com/gmlwn5470/cloud_crawling_pj/blob/master/FINAL_PPT.pptx
